@@ -1,11 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import 
 { BsGrid1X2Fill, BsFillArchiveFill, BsPeopleFill, 
   BsWalletFill, BsMenuButtonWideFill, BsBrowserEdge}
  from 'react-icons/bs';
 import {MdLiveHelp} from 'react-icons/md'
+import { NavLink } from 'react-router-dom';
 
 function Sidebar({openSidebarToggle, OpenSidebar}) {
+
   return (
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
         <div className='sidebar-title'>
@@ -17,37 +19,38 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
-                <a href="">
+                <NavLink to="/dashboard">
                     <BsGrid1X2Fill className='icon'/> Dashboard
-                </a>
+                </NavLink>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <NavLink to="/products">
                     <BsFillArchiveFill className='icon'/> Products
-                </a>
+                </NavLink>
             </li>
             
             <li className='sidebar-list-item'>
-                <a href="">
+                <NavLink to="customers">
                     <BsPeopleFill className='icon'/> Customers
-                </a>
+                </NavLink>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <NavLink to="promote">
                     <BsWalletFill className='icon'/> Income
-                </a>
+                </NavLink>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <NavLink to="income">
                     <BsMenuButtonWideFill className='icon'/> Promote
-                </a>
+                </NavLink>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <NavLink to="help">
                     <MdLiveHelp className='icon'/> Help
-                </a>
+                </NavLink>
             </li>
         </ul>
+
     </aside>
   )
 }

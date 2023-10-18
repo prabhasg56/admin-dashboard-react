@@ -4,7 +4,7 @@ import
  from 'react-icons/bs';
  import {MdWavingHand} from 'react-icons/md'
 
-function Header({OpenSidebar}) {
+const Header = ({OpenSidebar}) => {
   return (
     <header className='header'>
         <div className='menu-icon'>
@@ -14,10 +14,11 @@ function Header({OpenSidebar}) {
            <span>Hello Shahrukh </span> <MdWavingHand  className='icon'/>,
         </div>
         <div className='header-right'>
-           <div>
-           <BsSearch  className='icon search '/>
+           <form className='search'>
            <input placeholder='Search...' className='input'/>
-           </div>
+           <button className='search-barbtn'><BsSearch  className='icon'/></button>
+
+           </form>
         </div>
     </header>
   )
